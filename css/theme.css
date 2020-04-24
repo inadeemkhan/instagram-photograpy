@@ -151,13 +151,12 @@ body .outer-container .container.single-page .sidebar .magento-free-extention-se
 /* Main content css start from here */
 body .outer-container .container.single-page .expertise-section header.entry-header h2.entry-title,
 body .outer-container .container.single-page .skilld-section h2.entry-title {
-    font-size: 40px;
+    font-size: 25px;
     color: #000;
-    font-family: serif;
-    font-weight: initial;
     text-align: left;
     margin-top: 20px;
     margin-bottom: 0;
+    text-transform: uppercase;
 }
 body .outer-container .container.single-page .expertise-section .entry-content p {
     font-size: 14px;
