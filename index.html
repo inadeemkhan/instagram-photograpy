@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Nadeem Khan</title>
+    <title>Nadeem Khan - Mobile Photograpy</title>
     <link rel="icon" href="images/logo.png" type="image/gif" sizes="16x16">
 
     <!-- Required meta tags -->
@@ -58,9 +58,9 @@
                                         </li>
                                         <li>
                                             <i class="fa fa-mobile" aria-hidden="true"></i>
-                                            <a href="9717599422">(+91) 9717599422</a>
+                                            <a href="tel:+919717599422">(+91) 9717599422</a>
                                         </li>
-                                    </ul><!-- .tags-links -->
+                                    </ul>
                                 </div>
                             </div>
 
@@ -70,11 +70,11 @@
                                         <li>
                                             <a href="https://api.whatsapp.com/send?phone=919717599422;text=Hi, I contacted you through your website." target="_blank"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
                                         </li>
-                                        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/in/nadeem-khan-a92b33118"><i class="fa fa-linkedin"></i></a></li>
+                                        <li><a href="https://www.instagram.com/nadeem_khan_kassar/"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a href="https://www.facebook.com/profile.php?id=100003804160599"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="https://twitter.com/NadeemK96970793"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="https://in.pinterest.com/khannadeem243/"><i class="fa fa-pinterest"></i></a></li>
                                     </ul><!-- .tags-links -->
                                 </div>
                             </div>
@@ -83,10 +83,9 @@
 
                     <!-- main website content is here -->
                     <div class="col-12 col-lg-8">
-                        <ul></ul>
                         <div class="expertise-section">
                             <header class="entry-header">
-                                <h2 class="entry-title">Instagram Images -</h2>
+                                <h2 class="entry-title follow-on-instagram">Follow On Instagram - </h2>
                             </header>
                             <hr>
                             <div class="instagram-image-section">
@@ -97,7 +96,8 @@
                 </div>
             </div>
         </div>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script type='text/javascript'>
             var token = '2670648650.c217676.a455a69424f5465eb6476515bdf80b0f',
             userid = 2670648650,
@@ -109,10 +109,25 @@
                 type: 'GET',
                 data: {access_token: token, count: num_photos},
                 success: function(data){
-                    console.log(data);
+                    var followOnInstagram = "";
                     for( x in data.data ){
-                        $('.instagram-image-section .row').append('<div class="col-lg-6 col-md-6 col-sm-12 col-xm-12"><div class="instagram-image"><img src="'+data.data[x].images.standard_resolution.url+'" class="img-responsive" alt="Image"><div class="instgram-details-section"><img src="images/portfolio/IMG_20200315_144700-01.jpeg" class="img-responsive profile-image" alt="Image"><a href="#" class="instagram-user-name">'+data.data[x].user.full_name+'</a><div class="like-comment"><span class="comments">'+data.data[x].comments.count+' <i class="fa fa-comment"></i></span><span class="like">'+data.data[x].likes.count+' <i class="fa fa-heart"></i></span></div></div></div></div>'); 
+                        var dateJson = $.parseJSON('{"date_created":"'+data.data[x].created_time+'"}'),
+                        createdAt = new Date(1000*dateJson.date_created);
+                        var captionText = "";
+                        var postLocation = "";
+                        var caption = data.data[x].caption;
+                        var location = data.data[x].location;
+                        if(caption != null){
+                            captionText = data.data[x].caption.text;
+                        }
+                        if(location != null){
+                            postLocation = " at "+data.data[x].location.name;
+                        }
+
+                        followOnInstagram = data.data[x].user.username;
+                        $('.instagram-image-section .row').append('<div class="col-lg-6 col-md-6 col-sm-12 col-xm-12"><div class="instgram-details-section"><img src="'+data.data[x].user.profile_picture+'" class="img-responsive profile-image" alt="Image"><a href="#" class="instagram-user-name">'+data.data[x].user.full_name+'</a><div class="post-location-at"><p>'+postLocation+'</p></div><div class="created-at-date"><p>'+createdAt.toLocaleString()+'</p></div><div class="caption-section"><div class="text"><p>'+captionText+'</p></div></div></div><div class="instagram-image"><img src="'+data.data[x].images.standard_resolution.url+'" class="img-responsive" alt="Image"></div></div>'); 
                     }
+                    $('.entry-title.follow-on-instagram').append("<a href='https://www.instagram.com/nadeem_khan_kassar/' target='_blank'>@"+followOnInstagram+"</a>");
                 },
                 error: function(data){
                     console.log(data);
