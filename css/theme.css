@@ -33,10 +33,7 @@ body.nimbus-is-editor .container.single-page .col-12.col-lg-8 {
 }
 body .outer-container .container.single-page .expertise-section {
     border: 1px solid #87878742;
-    padding: 20px 30px;
-}
-body .outer-container .container.single-page .sidebar .recent-post-wrap figure img {
-    /* border-radius: 50%; */
+    padding: 15px;
 }
 body .outer-container .container.single-page .sidebar .about-me h3.profile-name {
     font-size: 35px;
@@ -147,16 +144,66 @@ body .outer-container .container.single-page .sidebar .magento-free-extention-se
         padding-top: 20px;
     }
 }
-
+.instgram-details-section img.img-responsive.profile-image {
+    width: 50px;
+    border-radius: 50%;
+    display: inline-block;
+    float: left;
+}
+body .outer-container .container.single-page .expertise-section .instagram-image-section .instgram-details-section {
+    border: 1px solid #80808012;
+    padding-left: 10px;
+    padding-top: 10px;
+    background: #80808012;
+}
+body .outer-container .container.single-page .expertise-section .instagram-image-section .instgram-details-section .caption-section {
+    display: inline-block;
+}
+.instgram-details-section a.instagram-user-name {
+    padding-left: 10px;
+    display: inline-block;
+    float: left;
+    color: #000;
+    font-size: 15px;
+    line-height: 24px;
+    text-decoration: none;
+}
+.instgram-details-section .created-at-date p {
+    padding-left: 10px;
+    display: inline;
+}
+.instgram-details-section .caption-section .text p {
+    padding-top: 5px;
+    font-size: 13px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    float: left;
+}
+.instagram-image-section .col-lg-6.col-md-6.col-sm-12.col-xm-12 {
+    padding: 10px;
+}
+.instagram-image-section .instgram-details-section .created-at-date {
+    font-size: 12px;
+    font-family: sans-serif;
+}
+.instagram-image-section .instgram-details-section .post-location-at p {
+    margin-bottom: unset;
+    display: inline-block;
+    padding-left: 5px;
+    font-size: 14px;
+}
+body .outer-container .container.single-page .expertise-section h2.entry-title.follow-on-instagram a {
+    color: #1b1bdb;
+}
 /* Main content css start from here */
 body .outer-container .container.single-page .expertise-section header.entry-header h2.entry-title,
 body .outer-container .container.single-page .skilld-section h2.entry-title {
-    font-size: 25px;
+    font-size: 22px;
     color: #000;
     text-align: left;
-    margin-top: 20px;
     margin-bottom: 0;
-    text-transform: uppercase;
 }
 body .outer-container .container.single-page .expertise-section .entry-content p {
     font-size: 14px;
@@ -188,9 +235,9 @@ body .outer-container .container.single-page .expertise-section .instagram-image
     text-align: center;
 }
 body .outer-container .container.single-page .expertise-section .instagram-image-section .instagram-image {
-    border: 1px solid #87878736;
+    /* border: 1px solid #87878736;
     padding: 15px;
-    margin: 11px 0px;
+    margin: 11px 0px; */
 }
 body .outer-container .container.single-page .expertise-section .instagram-image-section .instagram-image .instgram-details-section img.img-responsive.profile-image {
     width: 75px;
