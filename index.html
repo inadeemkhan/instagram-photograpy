@@ -22,7 +22,6 @@
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/theme.css">
-
 </head>
     <body>
         <div class="outer-container">
@@ -97,63 +96,14 @@
                 </div>
             </div>
         </div>
-
-        <div class="recent-post-wrap" id="instagram-image-popup">
-            <div class="post-instagram">
-                <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-6 instagram-image-section">
-                        <img id="image-popup" src="images/logo.png" alt="linker error">
-                    </div>
-                    <div class="col-md-3 instagram-details-section">
-                        <div class="instgram-details-section">
-                            <img src="images/logo.png" class="img-responsive profile-image" alt="Image">
-                            <div class="post-location-at">
-                                <a href="#" class="instagram-user-name">Nadeem Khan</a>
-                                <p class="location">Muradnagar, Gzb</p>
-                                <div class="close-cross">
-                                    <i class="fa fa-times" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="popup-caption-section">
-                                <div class="caption-text">
-                                    <p>
-                                        Be like the earth, and let the flowers bloom.
-                        
-                                        #flowerphotography #flowers🌸 #flowersofinstagram
-                                        #naturephotography #naturegeography🏞 #naturephotography📷 #naturepics #naturegeographynice #quarantinelife #quarantinelife😷 #quarantine #greennature #greennature💚 #mobilephotography #mobilephotographyandediting #mobileediting #mobilephotographyindia #beautyphotography #beautyphotographer #naturebeauty #aestheticindia
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="instgram-footer-section">
-                            <hr>
-                            <div class="popup-caption-section">
-                                <div class="caption-text">
-                                    <i class="fa fa-heart" aria-hidden="true"> 20</i>
-                                    <i class="fa fa-comment" aria-hidden="true"> 30</i>
-                                    <a href="images/logo.png" download>
-                                        <i class="fa fa-download" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-1"></div>
-                </div>
-            </div>
-        </div>
-
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script type='text/javascript'>
             var token = '2670648650.c217676.a455a69424f5465eb6476515bdf80b0f',
             userid = 2670648650,
             num_photos = 200;
             
             $.ajax({
-                url: 'https://api.instagram.com/v1/users/' + userid + '/media/recent',
+                url: '//api.instagram.com/v1/users/' + userid + '/media/recent',
                 dataType: 'jsonp',
                 type: 'GET',
                 data: {access_token: token, count: num_photos},
@@ -182,135 +132,10 @@
                     console.log(data);
                 }
             });
-
-            $(window).on("load", function(event) {
-                $(".instagram-image img.img-responsive").click(function(){
-                    $("div#instagram-image-popup").css("display", "Block");
-                    var imageUrl = $(this).attr("src");
-                    $("img#image-popup").attr("src", imageUrl);
-                });
-                $("div#instagram-image-popup .post-instagram .instagram-details-section .instgram-details-section .post-location-at .close-cross").click(function(){
-                    $("div#instagram-image-popup").css("display", "none");
-                });
-            })
-        </script> 
+        </script>
 
         <script type='text/javascript' src='js/jquery.js'></script>
         <script type='text/javascript' src='js/swiper.min.js'></script>
         <script type='text/javascript' src='js/custom.js'></script>
     </body>
 </html>
-
-<style>
-
-@media only screen and (min-width: 768px) {
-    div#instagram-image-popup .post-instagram .instagram-image-section img#image-popup {
-        max-height: 600px;
-    }
-    div#instagram-image-popup .post-instagram .instagram-image-section {
-        padding-right: 0;
-        max-width: 41.6%;
-    }
-}
-@media only screen and (max-width: 768px) {
-    div#instagram-image-popup .post-instagram .instagram-image-section {
-        padding: 10px;
-        max-width: 90%;
-        text-align: center;
-        margin: auto;
-        position: absolute;
-        top: 31.6%;
-        left: 19px;
-        background: #fff;
-    }
-    div#instagram-image-popup .post-instagram .instagram-image-section img#image-popup {
-        width: 100%;
-    }
-    div#instagram-image-popup .post-instagram .instagram-details-section {
-        position: absolute;
-        max-width: 90%;
-        text-align: center;
-        margin: auto;
-        margin-top: -15px;
-        border: unset !important;
-        left: 34px;
-        top: 21%;
-    }
-    div#instagram-image-popup .post-instagram .instagram-details-section .instgram-details-section .popup-caption-section {
-        display: none;
-    }
-    div#instagram-image-popup .post-instagram .instagram-details-section .instgram-footer-section {
-        display: none;
-    }
-    div#instagram-image-popup .post-instagram .instagram-details-section hr {
-        display: none;
-    }
-}
-div#instagram-image-popup .post-instagram .instagram-details-section {
-    background-color: #fff;
-    color: #000;
-    max-height: 600px;
-    margin-left: -15px;
-    padding: 20px;
-    border-bottom: 4px solid #878787ab;
-    border-top: 4px solid #878787ab;
-    border-right: 4px solid #878787ab;
-}
-div#instagram-image-popup {
-    display: none;
-    color: #fff;
-    margin: auto;
-    text-align: center;
-    position: fixed;
-    top: 0px;
-    height: -webkit-fill-available;
-    left: 0;
-    z-index: 99999;
-    width: -webkit-fill-available;
-    vertical-align: middle;
-    padding: 30px 0px;
-    background: #000000c7;
-}
-body .outer-container .container.single-page .expertise-section .instagram-image-section .instagram-image {
-    cursor: pointer;
-}
-div#instagram-image-popup .post-instagram .instagram-details-section .instgram-details-section .post-location-at a.instagram-user-name {
-    padding: unset;
-    font-size: 18px;
-    text-transform: capitalize;
-    font-weight: 700;
-}
-div#instagram-image-popup .post-instagram .instagram-details-section .instgram-details-section .post-location-at {
-    display: table;
-    text-align: left;
-    padding-left: 10px;
-}
-div#instagram-image-popup .post-instagram .instagram-details-section .instgram-details-section .post-location-at p.location {
-    font-size: 14px;
-}
-div#instagram-image-popup .post-instagram .instagram-details-section .instgram-details-section img.img-responsive.profile-image {
-    width: 62px;
-}
-div#instagram-image-popup .post-instagram .instagram-details-section .instgram-details-section .popup-caption-section p {
-    font-size: 13.5px;
-    text-align: left;
-    color: #1b1bb6;
-}
-div#instagram-image-popup .post-instagram .instagram-details-section .instgram-footer-section {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: left;
-    font-size: 19px;
-}
-div#instagram-image-popup .post-instagram .instagram-details-section .instgram-footer-section i.fa {
-    padding: 0 5px;
-}
-div#instagram-image-popup .post-instagram .instagram-details-section .instgram-details-section .post-location-at .close-cross {
-    position: absolute;
-    right: 10px;
-    top: 2px;
-    cursor: pointer;
-}
-
-</style>
